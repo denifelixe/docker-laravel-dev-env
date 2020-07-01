@@ -1,5 +1,10 @@
 docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 
+#if you want to run composer inside the php container (module in php container is more complete)
+  docker-compose -f docker-compose.dev.yml exec php bash
+#then
+  composer install
+
 sudo chown -R $USER:$USER ~/laravel-app
 
 docker-compose -f docker-compose.dev.yml up --build -d
