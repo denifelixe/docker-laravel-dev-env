@@ -1,0 +1,5 @@
+docker run --rm -v $(pwd):/app composer install
+
+sudo chown -R $USER:$USER ~/laravel-app
+
+docker-compose -f docker-compose.dev.yml up --build -d
