@@ -1,11 +1,6 @@
 version: '2'
 
 services:
-
-networks:
-    laravel:
-
-services:
     nginx:
         image: nginx:1.19.0
         container_name: nginx
@@ -46,3 +41,6 @@ services:
             - ./:/var/www/html
         networks: 
             - laravel
+            
+networks:
+    laravel:
