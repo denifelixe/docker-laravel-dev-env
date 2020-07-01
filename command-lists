@@ -3,3 +3,5 @@ docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 sudo chown -R $USER:$USER ~/laravel-app
 
 docker-compose -f docker-compose.dev.yml up --build -d
+
+docker-compose -f docker-compose.dev.yml down -v
