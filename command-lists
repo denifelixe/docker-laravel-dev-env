@@ -9,6 +9,8 @@ sudo chown -R $USER:$USER ~/laravel-app
 
 docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml up --build -d
 
+docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml ps
+
 docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml logs
 
 docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml down -v
