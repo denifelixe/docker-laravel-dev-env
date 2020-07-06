@@ -27,4 +27,7 @@ docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml logs
 
 # Stop Docker Compose
-    docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml down -v
+    docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml down
+    
+    # If you want to remove the volumes also
+        docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml down -v

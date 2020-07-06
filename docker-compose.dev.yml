@@ -24,10 +24,22 @@ services:
         ports:
             - "3306:3306"
         volumes:
-            - ./docker/mysql-8.0.20/data/dev:/var/lib/mysql
+            - mysqldata:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: root
         networks: 
+            - laravel
+            
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:5
+        container_name: phpmyadmin
+        ports: 
+            - "8081:80"
+        links:
+            - mysql:db
+        environment:
+            UPLOAD_LIMIT: 9999999999
+        networks:
             - laravel
 
     php:
@@ -41,6 +53,9 @@ services:
             - ../:/var/www/html
         networks: 
             - laravel
-            
+
+volumes:
+    mysqldata:            
+
 networks:
     laravel:
