@@ -17,6 +17,9 @@ docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 # Add Submodule to the Parent Project
     git submodule add https://github.com/denifelixe/docker-laravel-dev-env.git
 
+# Volumes
+    change {your-project} with your project name in docker-compose.dev.yml
+
 # Run Docker Compose
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml up --build -d
 
