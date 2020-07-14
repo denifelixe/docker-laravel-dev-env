@@ -20,6 +20,19 @@ docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 # Volumes
     change {your-project} with your project name in docker-compose.dev.yml
 
+# Set Up Domain
+    # If you want to set up the domain, go to
+    # Windows (C:\Windows\System32\drivers\etc\hosts)
+    # Linux/BSD/MacOS (/etc/hosts)
+    # add to your hosts file
+        127.0.0.1       your-domain.local
+        # If you use Docker Toolbox that running Linux VM in background then the IP is 192.168.99.100
+        192.168.99.100	your-domain.local
+    # And Access it later in your browser with your-domain.local after you run Docker Compose
+
+# Change Virtual Host Domain
+    change VIRTUAL_HOST={your-domain.com} with VIRTUAL_HOST=your-domain.local
+
 # Run Docker Compose
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml up --build -d
 

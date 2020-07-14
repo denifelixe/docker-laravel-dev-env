@@ -1,0 +1,21 @@
+This tutorial is based on
+
+https://codewithhugo.com/docker-compose-local-https/
+https://github.com/HugoDF/docker-compose-local-https
+https://github.com/FiloSottile/mkcert
+https://hub.docker.com/r/jwilder/nginx-proxy/
+
+Install mkcert
+https://github.com/FiloSottile/mkcert#installation
+
+run "mkcert -install"
+run "mkcert your-domain.local"
+
+It will generate the certificate "./your-domain.local.pem" and the key at "./your-domain.local-key.pem"
+
+rename "./your-domain.local.pem" to "your-domain.local.crt"
+rename "./your-domain.local-key.pem" to "your-domain.local.key"
+
+and move it to ./docker/jwilder-nginx-proxy-latest/certs
+
+change VIRTUAL_HOST={your-domain.com} with VIRTUAL_HOST=your-domain.local in docker-compose.dev.yml
