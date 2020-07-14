@@ -69,7 +69,7 @@ services:
             - laravel
 
 volumes:
-    {your-project}-mysqldata:            
+    {your-project}-mysqldata:
 
 networks:
     laravel:
