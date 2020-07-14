@@ -16,7 +16,7 @@ services:
             - VIRTUAL_HOST={your-domain.com}
             - VIRTUAL_PORT=8080
         networks: 
-            - laravel
+            - {your-project}-laravel
 
     nginx-proxy:
         image: jwilder/nginx-proxy:latest
@@ -28,7 +28,7 @@ services:
             - /var/run/docker.sock:/tmp/docker.sock:ro
             - ./docker/jwilder-nginx-proxy-latest/certs:/etc/nginx/certs
         networks:
-            - laravel
+            - {your-project}-laravel
 
     mysql:
         image: mysql:8.0.20
@@ -42,7 +42,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: root
         networks: 
-            - laravel
+            - {your-project}-laravel
             
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:5
@@ -54,7 +54,7 @@ services:
         environment:
             UPLOAD_LIMIT: 9999999999
         networks:
-            - laravel
+            - {your-project}-laravel
 
     php:
         build:
@@ -66,7 +66,7 @@ services:
         volumes: 
             - ../:/var/www/html
         networks: 
-            - laravel
+            - {your-project}-laravel
 
 volumes:
     {your-project}-mysqldata:
