@@ -34,16 +34,7 @@
     change VIRTUAL_HOST={your-domain.com} with VIRTUAL_HOST=your-domain.local
 
 # Run Docker Compose
-    docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml up --build -d
-    
-    # If you want to set up the domain, go to
-    # Windows (C:\Windows\System32\drivers\etc\hosts)
-    # Linux/BSD/MacOS (/etc/hosts)
-    # add to your hosts file
-        127.0.0.1       your-domain.local
-        # If you use Docker Toolbox that running Linux VM in background then the IP is 192.168.99.100
-        192.168.99.100	your-domain.local
-    # And Access in your browser with your-domain.local
+    docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml up --build -d    
 
 # See Docker Compose Process List
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml ps
