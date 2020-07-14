@@ -1,5 +1,4 @@
-# docker-laravel-dev-env
-Docker Laravel Dev Environment
+# Docker Laravel Dev Environment
 
 To pull the repo to your project, run this command to add this dubmodule to your parent project
 
