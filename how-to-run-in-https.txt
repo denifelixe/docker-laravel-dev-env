@@ -5,6 +5,19 @@ https://github.com/HugoDF/docker-compose-local-https
 https://github.com/FiloSottile/mkcert
 https://hub.docker.com/r/jwilder/nginx-proxy/
 
+# Create docker-compose.dev.yml
+    Copy docker-compose.dev.yml.example.https to docker-compose.dev.yml
+
+# Set Up Domain
+    # if you want to use https:// you need to setup the domain name, go to
+    # Windows (C:\Windows\System32\drivers\etc\hosts)
+    # Linux/BSD/MacOS (/etc/hosts)
+    # add to your hosts file
+        127.0.0.1       your-domain.local
+        # If you use Docker Toolbox that running Linux VM in background then the IP is 192.168.99.100
+        192.168.99.100	your-domain.local
+    # And Access it later in your browser with your-domain.local after you run Docker Compose
+
 Install mkcert
 https://github.com/FiloSottile/mkcert#installation
 

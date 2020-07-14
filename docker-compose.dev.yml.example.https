@@ -5,14 +5,30 @@ services:
         image: nginx:1.19.0
         container_name: nginx
         ports:
-            - "80:80"
+            - "8080:80"
         volumes:
             - ../:/var/www/html
             - ./docker/nginx-1.19.0/configs/default.conf:/etc/nginx/conf.d/default.conf
         depends_on:
+            - nginx-proxy
             - php
             - mysql
+        environment: 
+            - VIRTUAL_HOST={your-domain.com}
+            - VIRTUAL_PORT=8080
         networks: 
+            - {your-project}-laravel
+
+    nginx-proxy:
+        image: jwilder/nginx-proxy:latest
+        container_name: nginx-proxy
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+            - ./docker/jwilder-nginx-proxy-latest/certs:/etc/nginx/certs
+        networks:
             - {your-project}-laravel
 
     mysql:
