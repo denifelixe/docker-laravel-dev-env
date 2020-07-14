@@ -23,6 +23,9 @@
 # Volumes
     change {your-project} with your project name in docker-compose.dev.yml
 
+# Networks
+    change {your-project} with your project name in docker-compose.dev.yml
+
 # Set Up Domain
     # If you want to set up the domain, go to
     # Windows (C:\Windows\System32\drivers\etc\hosts)
