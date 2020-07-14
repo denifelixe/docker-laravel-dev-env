@@ -1,5 +1,5 @@
-docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
-
+# Run composer and install the dependency
+    docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 # If you want to run composer inside the php container (module in php container is more complete), but first you need to run docker-compose up first
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml exec php bash
 # Then
@@ -22,6 +22,15 @@ docker run --rm -v $(pwd):/app composer install --ignore-platform-reqs
 
 # Run Docker Compose
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml up --build -d
+    
+    # If you want to set up the domain, go to
+    # Windows (C:\Windows\System32\drivers\etc\hosts)
+    # Linux/BSD/MacOS (/etc/hosts)
+    # add to your hosts file
+        127.0.0.1       your-domain.local
+        # If you use Docker Toolbox that running Linux VM in background then the IP is 192.168.99.100
+        192.168.99.100	your-domain.local
+    # And Access in your browser with your-domain.local
 
 # See Docker Compose Process List
     docker-compose -f docker-laravel-dev-env/docker-compose.dev.yml ps
