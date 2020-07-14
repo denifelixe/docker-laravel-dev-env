@@ -1,3 +1,6 @@
+# Add Submodule to the Parent Project
+    git submodule add https://github.com/denifelixe/docker-laravel-dev-env.git
+
 # Create docker-compose.dev.yml
     Copy docker-compose.dev.yml.example to docker-compose.dev.yml
 
@@ -16,9 +19,6 @@
     sudo chown -R $USER:www-data bootstrap/cache
     chmod -R 775 storage
     chmod -R 775 bootstrap/cache
-
-# Add Submodule to the Parent Project
-    git submodule add https://github.com/denifelixe/docker-laravel-dev-env.git
 
 # Volumes
     change {your-project} with your project name in docker-compose.dev.yml
