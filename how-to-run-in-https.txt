@@ -19,3 +19,5 @@ rename "./your-domain.local-key.pem" to "your-domain.local.key"
 and move it to ./docker/jwilder-nginx-proxy-latest/certs
 
 change VIRTUAL_HOST={your-domain.com} with VIRTUAL_HOST=your-domain.local in docker-compose.dev.yml
+
+Restart the container (Stop the Docker Compose and Run It Again)
