@@ -72,4 +72,4 @@ volumes:
     {your-project}-mysqldata:
 
 networks:
-    laravel:
+    {your-project}-laravel:
