@@ -1,3 +1,6 @@
+# If you're using Docker Toolbox for Windows, please note that by default, Toolbox only has access to the C:\Users directory and mounts it into the VMs at /c/Users.
+# https://docs.docker.com/toolbox/toolbox_install_windows/#optional-add-shared-directories
+
 # Add Submodule to the Parent Project
     git submodule add https://github.com/denifelixe/docker-laravel-dev-env.git
 
